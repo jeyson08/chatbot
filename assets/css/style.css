@@ -62,7 +62,6 @@ input {
   max-width: 90%;
   background-color: white;
   border-radius: 30px;
-  height: 400px;
   margin: auto;
   padding: 20px;
 }
@@ -75,7 +74,7 @@ input {
   max-width: 50%;
   height: 30px;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .reponse {
@@ -83,10 +82,10 @@ input {
   color: white;
   border-radius: 30px;
   width: auto;
-  height: 30px;
+  min-height: 30px;
   text-align: center;
   margin-left: 80%;
-  padding-top: 10px;
+  padding: 10px;
   margin-top: 20px;
 }
 
@@ -109,8 +108,4 @@ button:hover {
 
 h1 a:visited {
     color: #333;;
-}
-
-button.envoyer {
-    transform: translate(-100%)
 }
