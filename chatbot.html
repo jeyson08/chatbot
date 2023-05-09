@@ -8,13 +8,19 @@
     <title>chatbot</title>
 </head>
 <body>
-    <h1>Chatbot app</h1>
+    <h1><a href="index.html">Chatbot</a></button></h1>
+    <div class="conversation">
+        <div class="question">Comment vas-tu ?</div>
+        <div class="reponse">je vais bien</div>
+        <div class="question">et moi ?</div>
+        <div class="reponse">non</div>
+        <div class="question">pourquoi ?</div>
+        <div class="reponse">ui</div>
+    </div>
     <form action="input">
-        <h2>Posez moi une question</h2>
-        <input type="text" name="question" id="1">
-        <button type="submit">Envoyer</button>
+        <input type="text" name="question" id="1" placeholder="Posez votre question">
+        <button class="envoyer" type="submit">Envoyer</button>
     </form>
-    <button><a href="index.html">Accueil</a></button>
 </body>
 <script src="./assets/js/app.js"></script>
 </html>
