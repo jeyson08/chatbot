@@ -1,9 +1,10 @@
-const button = document.querySelector("button")
 const question = document.querySelector(".question")
 const conversation = document.querySelector(".conversation")
+const form = document.querySelector("form")
 const tabrep = ["oui", "il fait beau", "parce que"]
 
-button.addEventListener("click", ()=>{
+form.addEventListener("submit", (event)=>{
+    event.preventDefault()
     const input = document.querySelector("input")
     const ask = document.createElement("div")
     ask.classList.add("question")
@@ -18,7 +19,7 @@ button.addEventListener("click", ()=>{
         //     conversation.appendChild(rep)
         //     rep.innerHTML = tabrep[0]
     })
-    if(input.value === "ça va ?"){
+    if(input.value.toLowerCase().includes("a va")){
         const rep = document.createElement("div")
         rep.classList.add("reponse")
         conversation.appendChild(rep)
