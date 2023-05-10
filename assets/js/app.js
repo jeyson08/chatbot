@@ -21,24 +21,29 @@ const dialog = [
   {
     question: "où est tu",
     answer: "boulogne",
-  }
+  },
 ];
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const input = document.querySelector("input");
   const ask = document.createElement("div");
-  ask.classList.add("question");
+  ask.classList.add("reponse");
   conversation.appendChild(ask);
   ask.innerHTML = input.value;
-  dialog.forEach((val) => {
-    if (input.value.toLowerCase().includes(val.question)) {
-      const rep = document.createElement("div");
-      rep.classList.add("reponse");
-      conversation.appendChild(rep);
-      rep.innerHTML = val.answer;
-    }
-  });
+  const rep = document.createElement("div");
+  rep.classList.add("question");
+  conversation.appendChild(rep);
+  rep.innerHTML = "...";
+  setTimeout(function () {
+    dialog.forEach((val) => {
+      if (input.value.toLowerCase().includes(val.question)) {
+        rep.classList.add("question");
+        conversation.appendChild(rep);
+        rep.innerHTML = val.answer;
+      }
+    });
+  }, 1000);
 });
 
 const choice = document.getElementById("propositions");
