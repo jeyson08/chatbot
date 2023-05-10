@@ -12,8 +12,9 @@
     <div class="conversation">
         <div class="question">Bonjour je suis chatbot, posez moi une question</div>
     </div>
-    <form id="form">
-        <input type="text" name="question" id="1" placeholder="Posez votre question">
+    <form id="form" autocomplete="off">
+        <input list="propositions" type="search" name="question" id="1" placeholder="Posez votre question">
+        <datalist id="propositions"></datalist>
         <input type="submit" value="Envoi" id="envoi" class="envoi">
     </form>
 </body>
