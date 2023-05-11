@@ -1,6 +1,7 @@
 const question = document.querySelector(".question");
 const conversation = document.querySelector(".conversation");
 const form = document.querySelector("form");
+const req = document.getElementById("req")
 const dialog = [
   {
     question: "salut",
@@ -22,6 +23,10 @@ const dialog = [
     question: "où est tu",
     answer: "boulogne",
   },
+  {
+    question: "hugo",
+    answer: "hugro",
+  }
 ];
 
 form.addEventListener("submit", (event) => {
@@ -41,9 +46,10 @@ form.addEventListener("submit", (event) => {
         rep.classList.add("question");
         conversation.appendChild(rep);
         rep.innerHTML = val.answer;
+        req.value = ""
       }
     });
-  }, 1000);
+  }, 800);
 });
 
 const choice = document.getElementById("propositions");
