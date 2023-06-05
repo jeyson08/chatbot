@@ -1,7 +1,37 @@
+const choice = document.getElementById("propositions");
+const req = document.getElementById("req")
+const reponse = document.querySelector(".reponse")
+fetch("https://api-chatbot-lw0x.onrender.com/api/v1/dialogs")
+  .then(response => response.json())
+  .then(data => {
+    data.message.forEach(dialog => {
+      choice.innerHTML += `<option value ="${dialog.question}">`
+    })
+    // req.addEventListener("change", e=> {
+    //   console.log(e.target.value)
+    //   data.message.forEach(dialog => {
+    //     if(e.target.value === dialog.question){
+    //       console.log(dialog.answer)
+    //       reponse.innerHTML = dialog.answer
+    //     }
+    //   })
+    // })
+  })
+  .catch(error => console.log(error))
+
+//API CHUCK NORRIS ANGLAIS
+const chuck = document.getElementById("chuck")
+fetch("https://api.chucknorris.io/jokes/random")
+  .then(response => response.json())
+  // .then(data => console.log(data.value))
+  .then(data => chuck.innerHTML = data.value)
+  .catch(error => console.log(error))
+
+
+
 const question = document.querySelector(".question");
 const conversation = document.querySelector(".conversation");
 const form = document.querySelector("form");
-const req = document.getElementById("req")
 const dialog = [
   {
     question: "salut",
@@ -29,6 +59,7 @@ const dialog = [
   }
 ];
 
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const input = document.querySelector("input");
@@ -52,7 +83,7 @@ form.addEventListener("submit", (event) => {
   }, 800);
 });
 
-const choice = document.getElementById("propositions");
+
 dialog.forEach((val) => {
   choice.innerHTML += `<option value ="${val.question}">`;
 });
