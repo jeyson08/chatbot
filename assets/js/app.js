@@ -1,4 +1,4 @@
-const choice = document.getElementById("propositions");
+const choice = document.getElementById("propositions")
 const req = document.getElementById("req")
 const reponse = document.querySelector(".reponse")
 fetch("https://api-chatbot-lw0x.onrender.com/api/v1/dialogs")
