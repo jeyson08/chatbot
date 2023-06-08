@@ -1,7 +1,7 @@
 const choice = document.getElementById("propositions")
 const req = document.getElementById("req")
 const reponse = document.querySelector(".reponse")
-fetch("https://api-chatbot-lw0x.onrender.com/api/v1/dialogs")
+fetch("https://api-chatbot-lw0x.onrender.com/api/v1/alldialogs")
   .then(response => response.json())
   .then(data => {
     data.message.forEach(dialog => {
